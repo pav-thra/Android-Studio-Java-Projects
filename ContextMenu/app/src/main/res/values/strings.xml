@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">OptionMenu</string>
+    <string name="number_2">Number 2</string>
+    <string name="enter_second_number">Enter second number</string>
+    <string name="textview">TextView</string>
+    <string name="enter_first_number">Enter first number</string>
+    <string name="addition">Addition</string>
+    <string name="subtraction">Subtraction</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="division">Division</string>
+</resources>
