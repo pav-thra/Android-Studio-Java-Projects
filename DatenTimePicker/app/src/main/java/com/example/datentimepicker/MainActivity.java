@@ -3,11 +3,13 @@ package com.example.datentimepicker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 
 import java.util.Calendar;
 
@@ -28,18 +30,39 @@ EditText dt,tt;
             @Override
             public void onClick(View view) {
                 Calendar c=Calendar.getInstance();
-                int y,m,d;
+                int y,m,day;
                 y=c.get(Calendar.YEAR);
                 m=c.get(Calendar.MONTH);
-                d=c.get(Calendar.DAY_OF_MONTH);
+                day=c.get(Calendar.DAY_OF_MONTH);
 
                 DatePickerDialog dp=new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                         dt.setText(i2+"/"+(i1+1)+"/"+i);
-                    },y,m,d);
+                    }
+                }, y, m, day);
                 dp.show();
-                });
+            }
+        });
+
+        tb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar c=Calendar.getInstance();
+                int hr,min;
+                hr=c.get(Calendar.HOUR);
+                min=c.get(Calendar.MINUTE);
+
+                TimePickerDialog tp=new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int i, int i1) {
+                        String s=i+"";
+                        if (s.length()==1)
+                            s="0"+s;
+                        tt.setText(s+":"+i1);
+                    }
+                }, hr, min, true);
+                tp.show();
             }
         });
     }
