@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TTT</string>
+    <string name="player1_0">Player1: 0</string>
+    <string name="player2_0">Player2: 0</string>
+    <string name="reset">Reset</string>
+    <string name="player_1_0">Player 1: 0</string>
+</resources>
